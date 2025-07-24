@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- الصفحة الرئيسية -->
+  <url>
+    <loc>https://smsco.ai/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- عن الشركة -->
+  <url>
+    <loc>https://smsco.ai/ar/about</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://smsco.ai/en/about</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- تسجيل الأفراد -->
+  <url>
+    <loc>https://smsco.ai/ar/register-seeker</loc>
+  </url>
+  <url>
+    <loc>https://smsco.ai/en/register-seeker</loc>
+  </url>
+
+  <!-- تسجيل الشركات -->
+  <url>
+    <loc>https://smsco.ai/ar/register-company</loc>
+  </url>
+  <url>
+    <loc>https://smsco.ai/en/register-company</loc>
+  </url>
+
+  <!-- إنشاء السيرة الذاتية -->
+  <url>
+    <loc>https://smsco.ai/ar/cv-builder</loc>
+  </url>
+  <url>
+    <loc>https://smsco.ai/en/cv-builder</loc>
+  </url>
+
+  <!-- اتصل بنا -->
+  <url>
+    <loc>https://smsco.ai/ar/contact</loc>
+  </url>
+  <url>
+    <loc>https://smsco.ai/en/contact</loc>
+  </url>
+
+</urlset>

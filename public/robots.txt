@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://smsco.ai/sitemap.xml

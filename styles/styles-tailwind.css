@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============ Root Variables ============ */
+:root {
+  --primary-color: #00264d;
+  --secondary-color: #00bcd4;
+  --text-color: #333;
+  --bg-light: #f9f9f9;
+  --bg-dark: #00264d;
+  --font-main: 'Cairo', 'Segoe UI', sans-serif;
+}
+
+/* ============ Global Styling ============ */
+body {
+  font-family: var(--font-main);
+  background-color: white;
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+html[dir="rtl"] {
+  direction: rtl;
+  font-family: var(--font-main);
+}
+
+html[dir="ltr"] {
+  direction: ltr;
+  font-family: var(--font-main);
+}
+
+/* ============ Language Toggle ============ */
+.lang-toggle {
+  @apply text-sm bg-gray-100 px-4 py-2 rounded hover:bg-gray-200 transition;
+}
+
+/* ============ Hero Section ============ */
+.hero {
+  @apply text-center py-20 bg-gradient-to-r from-white to-gray-50;
+}
+.hero h1 {
+  @apply text-4xl font-extrabold mb-4;
+}
+.hero p {
+  @apply text-xl mb-6;
+}
+
+/* ============ Features Section ============ */
+.features {
+  @apply py-20 bg-white text-center;
+}
+.feature-card {
+  @apply border p-6 rounded shadow hover:shadow-lg transition;
+}
+.feature-title {
+  @apply text-xl font-semibold mb-2;
+}
+.feature-desc {
+  @apply text-base text-gray-600;
+}
+
+/* ============ Work Steps Section ============ */
+.how-it-works {
+  @apply py-20 bg-gray-100 text-center;
+}
+.how-it-works ol {
+  @apply grid md:grid-cols-3 gap-8 px-6 list-decimal list-inside;
+}
+.how-it-works li {
+  @apply text-lg font-medium;
+}
+
+/* ============ Success Stories Section ============ */
+.success-stories {
+  @apply py-20 bg-white text-center;
+}
+.success-stories p {
+  @apply px-6 text-lg text-gray-700;
+}
+
+/* ============ Videos Section ============ */
+.videos {
+  @apply py-20 bg-gray-50 text-center;
+}
+.video-wrapper {
+  @apply flex flex-col md:flex-row justify-center items-center gap-6 px-6;
+}
+.video-frame {
+  @apply w-full md:w-1/2 h-64 rounded overflow-hidden shadow-lg;
+}
+
+/* ============ CTA Section ============ */
+.cta-section {
+  @apply py-20 bg-primary text-white text-center;
+}
+.cta-section h2 {
+  @apply text-3xl font-bold mb-6;
+}
+.cta-button {
+  @apply bg-white text-primary px-6 py-3 rounded font-semibold hover:bg-gray-100 transition;
+}
+
+/* ============ Contact Form ============ */
+.contact-form {
+  @apply max-w-3xl mx-auto p-6 bg-white rounded shadow-md;
+}
+.contact-form input,
+.contact-form textarea {
+  @apply w-full border rounded p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-primary;
+}
+.contact-form button {
+  @apply w-full bg-primary text-white py-3 rounded hover:bg-blue-800 transition;
+}
+
+/* ============ Footer ============ */
+.footer {
+  @apply py-8 text-center border-t text-sm text-gray-500;
+}

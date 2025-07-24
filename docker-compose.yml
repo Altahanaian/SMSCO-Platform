@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: postgres:15
+    container_name: smsco_db
+    restart: always
+    environment:
+      POSTGRES_USER: smsco_user
+      POSTGRES_PASSWORD: strongpassword
+      POSTGRES_DB: smsco_db
+    volumes:
+      - smsco_db_data:/var/lib/postgresql/data
+    networks:
+      - smsco_network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: smsco_pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@smsco.local
+      PGADMIN_DEFAULT_PASSWORD: smscoadmin
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
+    networks:
+      - smsco_network
+
+  redis:
+    image: redis:alpine
+    container_name: smsco_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - smsco_network
+
+  smtp:
+    image: maildev/maildev
+    container_name: smsco_smtp
+    ports:
+      - "1080:1080" # UI
+      - "1025:1025" # SMTP
+    networks:
+      - smsco_network
+
+  backend:
+    build: ./backend
+    container_name: smsco_backend
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/smsco_db
+      SPRING_DATASOURCE_USERNAME: smsco_user
+      SPRING_DATASOURCE_PASSWORD: strongpassword
+      SPRING_REDIS_HOST: redis
+      MAIL_HOST: smtp
+      MAIL_PORT: 1025
+    depends_on:
+      - db
+      - redis
+      - smtp
+    networks:
+      - smsco_network
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build: ./frontend
+    container_name: smsco_frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+    networks:
+      - smsco_network
+
+networks:
+  smsco_network:
+
+volumes:
+  smsco_db_data:
