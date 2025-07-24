@@ -1,10 +1,8 @@
 // postcss.config.js
 module.exports = {
   plugins: {
-    'tailwindcss': {},
-    'postcss-nesting': {},
-    'autoprefixer': {},
+    'postcss-nesting': {},      // الأفضل وضعه قبل tailwind
+    tailwindcss: {},
+    autoprefixer: {},
   },
-}
-// This configuration file sets up PostCSS with Tailwind CSS, nesting support, and autoprefixing.
-// Ensure you have the necessary packages installed:
+};
