@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react"; // تأكد من تثبيت lucide-react
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const router = useRouter();
@@ -26,15 +26,19 @@ export default function Navbar() {
     { href: "#contact", ar: "اتصل بنا", en: "Contact" },
   ];
 
+  const logoSrc = isArabic ? "/logo-ar.svg" : "/logo-en.svg";
+
   return (
     <nav className="w-full bg-white shadow fixed top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <img
-            src={isArabic ? "/logo-ar.svg" : "/logo-en.svg"}
+          <Image
+            src={logoSrc}
             alt="SMSCO Logo"
-            className="h-10"
+            width={160}
+            height={50}
+            priority
           />
           <span className="text-xl font-bold text-blue-700">
             {isArabic ? "سمسكو" : "SMSCO"}
@@ -54,7 +58,7 @@ export default function Navbar() {
           ))}
           <button
             onClick={switchLocale}
-            className="ml-4 px-3 py-1 rounded border border-gray-300 hover:bg-gray-100"
+            className="ml-4 px-3 py-1 rounded border border-gray-300 hover:bg-gray-100 transition"
           >
             {isArabic ? "English" : "العربية"}
           </button>
