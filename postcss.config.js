@@ -1,7 +1,8 @@
 module.exports = {
   plugins: {
-    'postcss-nesting': {},  // ✅ أولاً
-    tailwindcss: {},        // ✅ ثانياً
-    autoprefixer: {},       // ✅ ثالثاً
+    tailwindcss: {},
+    autoprefixer: {},
   },
 };
+// This configuration file sets up PostCSS with Tailwind CSS and Autoprefixer.
+// It allows you to use Tailwind's utility-first CSS framework and ensures that your CSS is compatible with different browsers by adding vendor prefixes where necessary.

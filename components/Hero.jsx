@@ -1,3 +1,4 @@
+// components/Hero.jsx
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
@@ -48,7 +49,11 @@ export default function Hero() {
         {/* الصورة */}
         <div className="flex-1">
           <Image
-            src="/images/hero-illustration.png"
+            src={
+              isArabic
+                ? "/Imege/hero-illustration-ar.png"
+                : "/Imege/hero-illustration-en.png"
+            }
             alt="SMSCO illustration"
             width={600}
             height={400}
